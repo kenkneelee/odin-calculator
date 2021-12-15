@@ -27,7 +27,7 @@ body, html {
     display:flex;
     flex-direction: column;
     gap:10px;
-    background-color: aquamarine;
+    background-color: #464646;
     padding: 45px;
     border-radius: 40px;
     border:2px solid black;
@@ -35,7 +35,7 @@ body, html {
 }
 
 #display {
-    background-color:cadetblue;
+    background-color:rgb(95, 160, 114);
     height:20%;
     display: flex;
     justify-content: right;
@@ -44,7 +44,6 @@ body, html {
     border-radius: 10px;
     border: 2px solid black;
     font-family:"SevenSegment";
-
 }
 
 #buttons {
@@ -52,32 +51,45 @@ body, html {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: rgb(87, 144, 146);
+    background-color: #5251597e;
     height:80%;
     border: 2px solid black;
     border-radius: 10px;
+    padding:15px;
 }
 
 button {
     width: 25%;
-    height: 25%;
+    height: 20%;
     font-size: 36px;
-    border-radius: 20px;
+    border-radius: 10px;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0);
+    color:white;
+    border: 0px solid rgba(255, 255, 255, 0.281);
+    margin:0px;
+    text-align: center;
 }
 
 .numberButton {
     font-family: "SevenSegment";
 }
 
+.operatorButton {
+    background-color: rgba(160, 124, 95, 0.2);
+    border: 5px solid rgb(76,75,80);
+
+}
+
 
 button:active {
     border:3px solid white;
-    background-color: cadetblue;
+    background-color: rgb(95, 160, 114);
     color:white;
     transition: 0.1s;
 }
 
-@media (max-width:800px) {
+@media (max-width:1400px) {
     #container {
         height:75%;
         width:75%;
