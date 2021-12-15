@@ -1,51 +1,38 @@
-const add = function(a, b) {
-	return a+b;
+/* --------------------Variables-------------------- */
+let displayValue = 0;
+
+/* ---------------------Script---------------------- */
+console.log(operate(divide, 40, 8));
+console.log(displayValue);
+
+/* --------------------Functions-------------------- */
+// add function
+function sum(a, b) {
+    return a + b;
 };
 
-const subtract = function(a, b) {
-	return a-b;
+//subtract function
+function subtract(a, b) {
+    return a - b;
 };
 
-// const sum = function(array) {
-//   let total=0;
-// 	for (i=0; i<array.length; i++) {
-//     total+=array[i];
-//   }
-//   return total;
-// };
+//multiply function
+function multiply(a,b) {
+    return a*b;
+};
 
-const sum = function(array) {
-  return array.reduce((a,b) => a+b, 0);
+//divide function
+function divide(a,b) {
+    return a/b;
+};
+
+//operate / equals button function
+function operate(operator, a, b) {
+    displayValue = operator(a,b);
+    return operator(a,b);
 }
 
-// const multiply = function(array) {
-//   let product=1;
-//   for (i=0;i<array.length;i++) {
-//     product *= array[i];
-//   }
-//   return product;
-// };
-
-const multiply = function(array) {
-  return array.reduce((a,b)=> a*b, 1);
-};
-
-const power = function(a, b) {
-	return Math.pow(a, b);
-};
-
-const factorial = function(number) {
-	if (number < 0){
-    return undefined;
-  }
-  else if (number == 0) {
-    return 1;
-  }
-  else {
-    let final=1;
-    for (let i=number; i>=1; i--) {
-      final *= i;
-    }
-    return final;
-  }
-};
+//clear function
+function clear() {
+    displayValue=0;
+}
