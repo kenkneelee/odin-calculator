@@ -1,3 +1,8 @@
+@font-face {
+    font-family:"SevenSegment";
+    src: url("../fonts/ss.ttf") format("truetype");
+  }
+
 body, html {
     margin:0;
     padding:0;
@@ -21,9 +26,12 @@ body, html {
     width:20%;
     display:flex;
     flex-direction: column;
+    gap:10px;
     background-color: aquamarine;
     padding: 45px;
     border-radius: 40px;
+    border:2px solid black;
+    box-shadow: 4px 5px 20px -1px #000000;
 }
 
 #display {
@@ -35,7 +43,8 @@ body, html {
     padding:10px;
     border-radius: 10px;
     border: 2px solid black;
-    border-bottom: none;
+    font-family:"SevenSegment";
+
 }
 
 #buttons {
@@ -55,3 +64,31 @@ button {
     font-size: 36px;
     border-radius: 20px;
 }
+
+.numberButton {
+    font-family: "SevenSegment";
+}
+
+
+button:active {
+    border:3px solid white;
+    background-color: cadetblue;
+    color:white;
+    transition: 0.1s;
+}
+
+@media (max-width:800px) {
+    #container {
+        height:75%;
+        width:75%;
+        padding:25px;
+    }
+    #display {
+        font-size:36px;
+    }
+    button {
+        font-size: 20px;
+    }
+
+}
+
