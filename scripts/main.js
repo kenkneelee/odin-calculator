@@ -19,6 +19,7 @@ document.getElementById("clearButton").onclick = function () {
 }
 
 const numerics = [...document.getElementsByClassName("numberButton")];
+
 numerics.forEach(element => {
     element.addEventListener("click", function () {
         a.push(element.id);
@@ -26,6 +27,14 @@ numerics.forEach(element => {
         displayValue = Number(a.join(''));
         refresh();
     })
+});
+
+const backspace = document.getElementById("backspaceButton");
+
+backspace.addEventListener(("click"), function () {
+    a.pop();
+    displayValue = Number(a.join(''));
+    refresh();
 });
 
 
@@ -59,8 +68,8 @@ function operate(operator, a, b) {
 
 //clear function
 function clear() {
-    a=[];
-    b=[];
+    a = [];
+    b = [];
     displayValue = 0;
 }
 
