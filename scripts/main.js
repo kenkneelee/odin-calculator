@@ -19,7 +19,6 @@ document.getElementById("clearButton").onclick = function () {
 }
 
 const numerics = [...document.getElementsByClassName("numberButton")];
-console.log(numerics);
 numerics.forEach(element => {
     element.addEventListener("click", function () {
         a.push(element.id);
@@ -60,6 +59,8 @@ function operate(operator, a, b) {
 
 //clear function
 function clear() {
+    a=[];
+    b=[];
     displayValue = 0;
 }
 

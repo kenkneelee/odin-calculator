@@ -22,8 +22,8 @@ body, html {
 }
 
 #container {
-    height:50%;
-    width:20%;
+    height:70%;
+    width:27%;
     display:flex;
     flex-direction: column;
     gap:10px;
@@ -45,6 +45,7 @@ body, html {
     border: 2px solid black;
     font-family:"SevenSegment";
 }
+
 
 #buttons {
     display:flex;
