@@ -1,14 +1,15 @@
 /* --------------------Variables-------------------- */
 let displayValue = 0;
+let a = [];
+let b = [];
 const display = document.getElementById("display");
 
 
 /* ---------------------Script---------------------- */
-console.log(operate(divide, 40, 8));
 console.log(displayValue);
-document.onload = function () {
-    display.textContent = displayValue;
-    console.log(display.textContent)
+window.onload = function () {
+    clear();
+    refresh();
 }
 
 /* ---------------------Buttons--------------------- */
@@ -17,11 +18,19 @@ document.getElementById("clearButton").onclick = function () {
     refresh();
 }
 
+const numerics = [...document.getElementsByClassName("numberButton")];
+console.log(numerics);
+numerics.forEach(element => {
+    element.addEventListener("click", function () {
+        a.push(element.id);
+        console.log(a);
+        displayValue = Number(a.join(''));
+        refresh();
+    })
+});
+
 
 /* --------------------Functions-------------------- */
-
-
-
 // add function
 function sum(a, b) {
     return a + b;
@@ -33,25 +42,25 @@ function subtract(a, b) {
 };
 
 //multiply function
-function multiply(a,b) {
-    return a*b;
+function multiply(a, b) {
+    return a * b;
 };
 
 //divide function
-function divide(a,b) {
-    return a/b;
+function divide(a, b) {
+    return a / b;
 };
 
 //operate / equals button function
 function operate(operator, a, b) {
-    displayValue = operator(a,b);
+    displayValue = operator(a, b);
     refresh();
-    return operator(a,b);
+    return operator(a, b);
 }
 
 //clear function
 function clear() {
-    displayValue=0;
+    displayValue = 0;
 }
 
 function refresh() {
