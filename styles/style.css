@@ -76,7 +76,7 @@ button {
     font-family: "SevenSegment";
 }
 
-.operatorButton {
+.coloredButton {
     background-color: rgba(160, 124, 95, 0.2);
     border: 5px solid rgb(76,75,80);
 
