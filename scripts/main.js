@@ -29,7 +29,6 @@ backspace.addEventListener(("click"), function () {
     inputValue.pop();
     displayValue = Number(inputValue.join(''));
     refresh();
-    equaled = false;
 });
 
 // Numeric buttons
