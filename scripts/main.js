@@ -5,6 +5,7 @@ let currentOperator = "none";
 let a = [];
 let b = [];
 const display = document.getElementById("display");
+let equaled=false;
 
 
 /* ---------------------Script---------------------- */
@@ -60,7 +61,7 @@ equals.addEventListener("click", function () {
     b = displayValue;
     console.log(a + " " + currentOperator + " " + b);
     operate(currentOperator, a, b);
-    a = [displayValue];
+    inputValue=[displayValue];
     b = [];
 });
 
@@ -84,6 +85,11 @@ function multiply(a, b) {
 //divide function
 function divide(a, b) {
     return a / b;
+};
+
+//exponent function
+function exponent(a,b) {
+    return a**b;
 };
 
 //operate / equals button function
