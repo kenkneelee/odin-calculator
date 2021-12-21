@@ -36,12 +36,11 @@ backspace.addEventListener(("click"), function () {
 const numerics = [...document.getElementsByClassName("numberButton")];
 numerics.forEach(element => {
     element.addEventListener("click", function () {
-        if (equaled == false && inputValue.length < 15) {
+        if (inputValue.length < 15) {
             inputValue.push(element.id);
             console.log(inputValue);
             displayValue = Number(inputValue.join(''));
             refresh();
-            equaled = false;
         }
     })
 });
@@ -66,11 +65,11 @@ const equals = document.getElementById("equals");
 equals.addEventListener("click", function () {
     if (equaled == false) {
         b = displayValue;
+        console.log(a + " " + currentOperator + " " + b);
+        operate(currentOperator, a, b);
+        inputValue = displayValue.toString().split("");
+        equaled = true;
     }
-    console.log(a + " " + currentOperator + " " + b);
-    operate(currentOperator, a, b);
-    inputValue = displayValue.toString().split("");
-    equaled = true;
 });
 
 
