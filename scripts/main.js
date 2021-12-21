@@ -54,6 +54,16 @@ operators.forEach(element => {
     })
 })
 
+// Equals button
+const equals = document.getElementById("equals");
+equals.addEventListener("click", function () {
+    b = displayValue;
+    console.log(a + " " + currentOperator + " " + b);
+    operate(currentOperator, a, b);
+    a = [displayValue];
+    b = [];
+});
+
 
 /* --------------------Functions-------------------- */
 // add function
@@ -78,10 +88,9 @@ function divide(a, b) {
 
 //operate / equals button function
 function operate(operator, a, b) {
-    displayValue = operator(a, b);
+    displayValue = window[operator](a, b);
     refresh();
-    return operator(a, b);
-
+    return window[operator](a, b);
 }
 
 //clear function
