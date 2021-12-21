@@ -5,7 +5,7 @@ let currentOperator = "none";
 let a = [];
 let b = [];
 const display = document.getElementById("display");
-let equaled=false;
+let equaled = false;
 
 
 /* ---------------------Script---------------------- */
@@ -20,6 +20,7 @@ window.onload = function () {
 document.getElementById("clearButton").onclick = function () {
     clear();
     refresh();
+    equaled = false;
 }
 
 // Backspace button
@@ -28,16 +29,20 @@ backspace.addEventListener(("click"), function () {
     inputValue.pop();
     displayValue = Number(inputValue.join(''));
     refresh();
+    equaled = false;
 });
 
 // Numeric buttons
 const numerics = [...document.getElementsByClassName("numberButton")];
 numerics.forEach(element => {
     element.addEventListener("click", function () {
-        inputValue.push(element.id);
-        console.log(inputValue);
-        displayValue = Number(inputValue.join(''));
-        refresh();
+        if (equaled == false && inputValue.length < 15) {
+            inputValue.push(element.id);
+            console.log(inputValue);
+            displayValue = Number(inputValue.join(''));
+            refresh();
+            equaled = false;
+        }
     })
 });
 
@@ -52,17 +57,20 @@ operators.forEach(element => {
         inputValue = [];
         currentOperator = element.id;
         console.log(currentOperator);
+        equaled = false;
     })
 })
 
 // Equals button
 const equals = document.getElementById("equals");
 equals.addEventListener("click", function () {
-    b = displayValue;
+    if (equaled == false) {
+        b = displayValue;
+    }
     console.log(a + " " + currentOperator + " " + b);
     operate(currentOperator, a, b);
-    inputValue=[displayValue];
-    b = [];
+    inputValue = displayValue.toString().split("");
+    equaled = true;
 });
 
 
@@ -88,8 +96,8 @@ function divide(a, b) {
 };
 
 //exponent function
-function exponent(a,b) {
-    return a**b;
+function exponent(a, b) {
+    return a ** b;
 };
 
 //operate / equals button function
