@@ -34,7 +34,7 @@ backspace.addEventListener(("click"), function () {
 const numerics = [...document.getElementsByClassName("numberButton")];
 numerics.forEach(element => {
     element.addEventListener("click", function () {
-        if (inputValue.length < 13) {
+        if (inputValue.length < 11) {
             inputValue.push(element.id);
             console.log(inputValue);
             displayValue = Number(inputValue.join(''));
@@ -99,7 +99,7 @@ function exponent(a, b) {
 
 //operate / equals button function
 function operate(operator, a, b) {
-    displayValue = +(+window[operator](a, b).toFixed(10)).toPrecision(8);
+    displayValue = +(+window[operator](a, b).toFixed(10)).toPrecision(11);
     refresh();
     return window[operator](a, b);
 }

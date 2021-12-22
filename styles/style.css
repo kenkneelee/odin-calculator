@@ -105,3 +105,21 @@ button:active {
 
 }
 
+@media (min-width:2559px) {
+    #display {
+        font-size: 60px;
+    }
+    button {
+        font-size: 40px;
+    }
+}
+
+@media (min-width:3839px) {
+    #display {
+        font-size: 80px;
+    }
+    button {
+        font-size: 60px;
+    }
+}
+
