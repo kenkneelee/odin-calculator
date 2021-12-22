@@ -90,7 +90,7 @@ button:active {
     transition: 0.1s;
 }
 
-@media (max-width:1400px) {
+@media (max-width:1365px) {
     #container {
         height:75%;
         width:75%;

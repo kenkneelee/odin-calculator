@@ -9,18 +9,17 @@ let equaled = false;
 
 
 /* ---------------------Script---------------------- */
-console.log(displayValue);
 window.onload = function () {
     clear();
     refresh();
 }
+console.log(displayValue);
 
 /* ---------------------Buttons--------------------- */
 // Clear button
 document.getElementById("clearButton").onclick = function () {
     clear();
     refresh();
-    equaled = false;
 }
 
 // Backspace button
@@ -35,7 +34,7 @@ backspace.addEventListener(("click"), function () {
 const numerics = [...document.getElementsByClassName("numberButton")];
 numerics.forEach(element => {
     element.addEventListener("click", function () {
-        if (inputValue.length < 15) {
+        if (inputValue.length < 13) {
             inputValue.push(element.id);
             console.log(inputValue);
             displayValue = Number(inputValue.join(''));
@@ -100,7 +99,7 @@ function exponent(a, b) {
 
 //operate / equals button function
 function operate(operator, a, b) {
-    displayValue = window[operator](a, b);
+    displayValue = +(+window[operator](a, b).toFixed(10)).toPrecision(8);
     refresh();
     return window[operator](a, b);
 }
