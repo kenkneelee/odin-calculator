@@ -13,8 +13,6 @@ window.onload = function () {
     clear();
     refresh();
 }
-console.log(displayValue);
-
 /* ---------------------Buttons--------------------- */
 // Clear button
 document.getElementById("clearButton").onclick = function () {
@@ -36,7 +34,6 @@ numerics.forEach(element => {
     element.addEventListener("click", function () {
         if (inputValue.length < 11) {
             inputValue.push(element.id);
-            console.log(inputValue);
             displayValue = Number(inputValue.join(''));
             refresh();
         }
@@ -49,17 +46,14 @@ operators.forEach(element => {
     element.addEventListener("click", function () {
         if (equaled == false) {
             b = displayValue;
-            console.log(a + " " + currentOperator + " " + b);
             operate(currentOperator, a, b);
             inputValue = displayValue.toString().split("");
         }
         a = displayValue;
         displayValue = 0;
         refresh();
-        console.log(a);
         inputValue = [];
         currentOperator = element.id;
-        console.log(currentOperator);
         equaled = false;
     })
 })
@@ -69,7 +63,6 @@ const equals = document.getElementById("equals");
 equals.addEventListener("click", function () {
     if (equaled == false) {
         b = displayValue;
-        console.log(a + " " + currentOperator + " " + b);
         operate(currentOperator, a, b);
         inputValue = displayValue.toString().split("");
         equaled = true;
@@ -119,6 +112,7 @@ function clear() {
     refresh();
 }
 
+//refresh display with current value
 function refresh() {
     display.textContent = displayValue;
 }
