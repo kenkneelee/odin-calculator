@@ -5,7 +5,7 @@ let currentOperator = "none";
 let a = [];
 let b = [];
 const display = document.getElementById("display");
-let equaled = false;
+let equaled = true;
 
 
 /* ---------------------Script---------------------- */
@@ -47,6 +47,12 @@ numerics.forEach(element => {
 const operators = [...document.getElementsByClassName("operatorButton")];
 operators.forEach(element => {
     element.addEventListener("click", function () {
+        if (equaled == false) {
+            b = displayValue;
+            console.log(a + " " + currentOperator + " " + b);
+            operate(currentOperator, a, b);
+            inputValue = displayValue.toString().split("");
+        }
         a = displayValue;
         displayValue = 0;
         refresh();
