@@ -31,6 +31,7 @@ body, html {
     padding: 45px;
     border-radius: 40px;
     border:2px solid black;
+    border: 2px solid rgba(255, 255, 255, 0.181);
     box-shadow: 4px 5px 20px -1px #000000;
 }
 
@@ -42,7 +43,7 @@ body, html {
     align-items: center;
     padding:10px;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 2px solid rgba(255, 255, 255, 0.281);
     font-family:"SevenSegment";
 }
 
@@ -56,7 +57,7 @@ body, html {
     height:80%;
     border: 2px solid black;
     border-radius: 10px;
-    padding:15px;
+    padding:5px;
 }
 
 button {
@@ -67,7 +68,7 @@ button {
     opacity: 1;
     background-color: rgba(255, 255, 255, 0);
     color:white;
-    border: 0px solid rgba(255, 255, 255, 0.281);
+    border: 1px solid rgba(255, 255, 255, 0.281);
     margin:0px;
     text-align: center;
 }
@@ -78,10 +79,14 @@ button {
 
 .coloredButton {
     background-color: rgba(160, 124, 95, 0.2);
-    border: 5px solid rgb(76,75,80);
+    border: 1px solid rgb(255,255,255,0.281);
 
 }
 
+#equals {
+    width: 50%;
+    background-color: rgba(160, 95, 95, 0.4)
+}
 
 button:active {
     border:5px solid white;
